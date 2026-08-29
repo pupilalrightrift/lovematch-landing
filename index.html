@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoveMatch – Znajdź swoją drugą połówkę</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  .logo {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .logo span { color: #fff0f0; }
+  .tagline {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px 50px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    max-width: 420px;
+  }
+  .card h2 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+  }
+  .card p {
+    margin-bottom: 25px;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  .btn-register {
+    display: inline-block;
+    background: #fff;
+    color: #ff5f6d;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  .btn-register:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+  .features {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 700px;
+  }
+  .feature {
+    flex: 1;
+    min-width: 150px;
+  }
+  .feature .icon { font-size: 2rem; margin-bottom: 8px; }
+  .feature h3 { font-size: 1rem; margin-bottom: 5px; }
+  .feature p { font-size: 0.85rem; opacity: 0.85; }
+  footer {
+    margin-top: 60px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+  <div class="logo">Love<span>Match</span></div>
+  <p class="tagline">Poznawaj nowych ludzi, buduj relacje i znajdź osobę, z którą stworzysz coś wyjątkowego.</p>
+
+  <div class="card">
+    <h2>Dołącz do nas już dziś</h2>
+    <p>Rejestracja jest szybka, darmowa i zajmuje mniej niż minutę.</p>
+    <a href="#" id="register-btn" class="btn-register">Zarejestruj się</a>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="icon">💬</div>
+      <h3>Rozmawiaj</h3>
+      <p>Poznawaj ludzi w bezpiecznym środowisku.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">❤️</div>
+      <h3>Dopasowanie</h3>
+      <p>Nasz algorytm pomoże Ci znaleźć idealną osobę.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🔒</div>
+      <h3>Bezpiecznie</h3>
+      <p>Twoje dane są u nas w pełni chronione.</p>
+    </div>
+  </div>
+
+  <footer>&copy; 2026 LoveMatch. Wszelkie prawa zastrzeżone.</footer>
+
+</body>
+</html>
