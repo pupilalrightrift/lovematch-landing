@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LoveMatch – Znajdź swoją drugą połówkę</title>
+<title>LoveMatch</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -17,7 +17,29 @@
     color: #fff;
     text-align: center;
     padding: 20px;
+    position: relative;
   }
+  .lang-switch {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  .lang-btn {
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .lang-btn:hover { background: rgba(255,255,255,0.4); }
+  .lang-btn.active { background: #fff; color: #ff5f6d; }
   .logo {
     font-size: 2.8rem;
     font-weight: 700;
@@ -88,34 +110,62 @@
 </head>
 <body>
 
+  <div class="lang-switch">
+    <button class="lang-btn" id="btn-pl" onclick="setLang('pl')">PL</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+
   <div class="logo">Love<span>Match</span></div>
-  <p class="tagline">Poznawaj nowych ludzi, buduj relacje i znajdź osobę, z którą stworzysz coś wyjątkowego.</p>
+  <p class="tagline" data-pl="Poznawaj nowych ludzi, buduj relacje i znajdź osobę, z którą stworzysz coś wyjątkowego." data-en="Meet new people, build relationships, and find someone to create something special with.">Poznawaj nowych ludzi, buduj relacje i znajdź osobę, z którą stworzysz coś wyjątkowego.</p>
 
   <div class="card">
-    <h2>Dołącz do nas już dziś</h2>
-    <p>Rejestracja jest szybka, darmowa i zajmuje mniej niż minutę.</p>
-    <a href="#" id="register-btn" class="btn-register">Zarejestruj się</a>
+    <h2 data-pl="Dołącz do nas już dziś" data-en="Join us today">Dołącz do nas już dziś</h2>
+    <p data-pl="Rejestracja jest szybka, darmowa i zajmuje mniej niż minutę." data-en="Registration is fast, free, and takes less than a minute.">Rejestracja jest szybka, darmowa i zajmuje mniej niż minutę.</p>
+    <a href="#" id="register-btn" class="btn-register" data-pl="Zarejestruj się" data-en="Sign up">Zarejestruj się</a>
   </div>
 
   <div class="features">
     <div class="feature">
       <div class="icon">💬</div>
-      <h3>Rozmawiaj</h3>
-      <p>Poznawaj ludzi w bezpiecznym środowisku.</p>
+      <h3 data-pl="Rozmawiaj" data-en="Chat">Rozmawiaj</h3>
+      <p data-pl="Poznawaj ludzi w bezpiecznym środowisku." data-en="Meet people in a safe environment.">Poznawaj ludzi w bezpiecznym środowisku.</p>
     </div>
     <div class="feature">
       <div class="icon">❤️</div>
-      <h3>Dopasowanie</h3>
-      <p>Nasz algorytm pomoże Ci znaleźć idealną osobę.</p>
+      <h3 data-pl="Dopasowanie" data-en="Matching">Dopasowanie</h3>
+      <p data-pl="Nasz algorytm pomoże Ci znaleźć idealną osobę." data-en="Our algorithm helps you find the perfect match.">Nasz algorytm pomoże Ci znaleźć idealną osobę.</p>
     </div>
     <div class="feature">
       <div class="icon">🔒</div>
-      <h3>Bezpiecznie</h3>
-      <p>Twoje dane są u nas w pełni chronione.</p>
+      <h3 data-pl="Bezpiecznie" data-en="Secure">Bezpiecznie</h3>
+      <p data-pl="Twoje dane są u nas w pełni chronione." data-en="Your data is fully protected with us.">Twoje dane są u nas w pełni chronione.</p>
     </div>
   </div>
 
-  <footer>&copy; 2026 LoveMatch. Wszelkie prawa zastrzeżone.</footer>
+  <footer data-pl="© 2026 LoveMatch. Wszelkie prawa zastrzeżone." data-en="© 2026 LoveMatch. All rights reserved.">&copy; 2026 LoveMatch. Wszelkie prawa zastrzeżone.</footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-' + lang + ']').forEach(function(el) {
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+  document.documentElement.lang = lang;
+  document.getElementById('btn-pl').classList.toggle('active', lang === 'pl');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  localStorage.setItem('lovematch-lang', lang);
+}
+
+(function() {
+  var saved = localStorage.getItem('lovematch-lang');
+  if (saved) {
+    setLang(saved);
+    return;
+  }
+  var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+  var lang = browserLang.startsWith('pl') ? 'pl' : 'en';
+  setLang(lang);
+})();
+</script>
 
 </body>
 </html>
