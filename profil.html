@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoveMatch - Profil</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%98%88%3C/text%3E%3C/svg%3E">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 20px;
+  }
+  .back-link {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  .demo-badge {
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .profile-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 30px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+  }
+  .avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background: #fff3;
+    border: 3px solid #fff;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    overflow: hidden;
+  }
+  .name-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+  .name-row h1 { font-size: 1.7rem; }
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    background: #4CAF50;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .location {
+    opacity: 0.85;
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+  }
+  .bio {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 22px;
+    line-height: 1.5;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  .tag {
+    background: rgba(255,255,255,0.2);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+  }
+  .btn-message {
+    display: inline-block;
+    background: #fff;
+    color: #ff5f6d;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 14px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 100%;
+  }
+  .btn-message:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+  .disclaimer {
+    margin-top: 25px;
+    font-size: 0.75rem;
+    opacity: 0.75;
+    max-width: 380px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">&larr; Powrót</a>
+
+  <div class="demo-badge">PRZYKŁADOWY PROFIL - DEMO</div>
+
+  <div class="profile-card">
+    <!-- Podmień poniższy div na: <img class="avatar" src="TWOJE_ZDJECIE.jpg" alt="Daria5578"> -->
+    <div class="avatar">🙂</div>
+
+    <div class="name-row">
+      <h1>Daria5578</h1>
+      <span class="status-dot" title="Aktywna"></span>
+    </div>
+    <div class="location">28 lat &middot; Warszawa &middot; 3 km od Ciebie</div>
+
+    <p class="bio">
+      Uśmiech zdradza więcej niż tysiąc słów. Szukam kogoś, z kim będę mogła szczerze
+      porozmawiać i odkryć coś nowego. Kawa, spacery, dobra muzyka.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Podróże</span>
+      <span class="tag">Muzyka</span>
+      <span class="tag">Kawa</span>
+      <span class="tag">Aktywność</span>
+    </div>
+
+    <!-- Podmień href="#" na własny link rejestracji/wiadomości -->
+    <a href="#" class="btn-message">💬 Wyślij wiadomość</a>
+  </div>
+
+  <p class="disclaimer">
+    To przykładowy profil demonstracyjny prezentujący wygląd i funkcjonalność serwisu.
+    Nie reprezentuje prawdziwej, istniejącej osoby.
+  </p>
+
+</body>
+</html>
